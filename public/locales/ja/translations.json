@@ -1,6 +1,6 @@
 {
   "header": {
-    "name": "あなたの名前"
+    "name": "YOO KYUNGHYEON"
   },
   "nav": {
     "bio": "プロフィール",
@@ -10,17 +10,17 @@
     "contact": "連絡先"
   },
   "bio": {
-    "name": "Your Name",
-    "nameJp": "あなたの名前",
+    "name": "YOO KYUNGHYEON",
+    "nameJp": "ユ　ギョンヒョン",
     "phd": "Ph.D.",
     "phdJp": "博士（工学）",
-    "position": "博士研究員",
+    "position": "JSPS fellowship",
     "affiliation": "東京大学 総合研究機構",
-    "github": "https://github.com/yourusername",
-    "scholar": "https://scholar.google.com/citations?user=your-id",
-    "orcid": "https://orcid.org/0000-0000-0000-0000",
-    "researchmap": "https://researchmap.jp/yourusername",
-    "linkedin": "https://www.linkedin.com/in/yourusername/",
+    "github": "https://github.com/KHyeon-Yoo",
+    "scholar": "https://scholar.google.com/citations?user=_eq8JasAAAAJ&hl=ja&oi=ao",
+    "orcid": "https://orcid.org/0000-0001-5328-2919",
+    "researchmap": "",
+    "linkedin": "https://www.linkedin.com/in/경현-유-8b68a9355/",
     "researchInterests": "研究興味",
     "researchTags": [
       "数学",
