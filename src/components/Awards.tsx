@@ -7,6 +7,7 @@ type TabType = "awards" | "grants" | "projects";
 
 const Awards: React.FC = () => {
   const { t, i18n } = useTranslation();
+  const baseUrl = import.meta.env.BASE_URL;
   const [awards, setAwards] = useState<Award[]>([]);
   const [grants, setGrants] = useState<Grant[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
@@ -20,9 +21,9 @@ const Awards: React.FC = () => {
       setIsLoading(true);
       try {
         // 言語に応じたJSONファイルのパス
-        const awardsPath = `/api/awards.json`;
-        const grantsPath = `/api/researchProjects.json`;
-        const projectsPath = `./content/etc/projects_${i18n.language}.json`;
+        const awardsPath = `${baseUrl}api/awards.json`;
+        const grantsPath = `${baseUrl}api/researchProjects.json`;
+        const projectsPath = `${baseUrl}content/etc/projects_${i18n.language}.json`;
 
         // 並列でデータをフェッチ
         const [awardsResponse, grantsResponse, projectsResponse] =
@@ -64,7 +65,7 @@ const Awards: React.FC = () => {
     };
 
     fetchData();
-  }, [i18n.language]);
+  }, [i18n.language, baseUrl]);
 
   // タブ切り替えハンドラ
   const handleTabChange = (tab: TabType) => {
