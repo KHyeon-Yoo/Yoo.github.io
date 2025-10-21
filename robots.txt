@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# サイトマップの場所
+Sitemap: https://Kyueon-yoo.github.io/Yoo.github.io/sitemap.xml
