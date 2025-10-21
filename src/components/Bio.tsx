@@ -150,7 +150,7 @@ const Bio: React.FC = () => {
                     className="text-secondary hover:text-accent transition-colors"
                     aria-label="Researchmap"
                   >
-                    <img src="/rm.png" alt="Researchmap" className="h-6 w-6" />
+                    <img src={`${baseUrl}rm.png`} alt="Researchmap" className="h-6 w-6" />
                   </a>
                   <span className="text-sm text-gray-600">Researchmap</span>
                 </div>
