@@ -16,7 +16,7 @@ const Bio: React.FC = () => {
     const fetchBioContent = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`./content/bio/bio_${i18n.language}.md`);
+        const response = await fetch(`${baseUrl}content/bio/bio_${i18n.language}.md`);
         const content = await response.text();
         setBioContent(content);
       } catch (error) {
@@ -28,7 +28,7 @@ const Bio: React.FC = () => {
     };
 
     fetchBioContent();
-  }, [i18n.language]);
+  }, [i18n.language, baseUrl]);
 
   // 研究タグのリスト
   const researchTagsResult = t("bio.researchTags", { returnObjects: true });
