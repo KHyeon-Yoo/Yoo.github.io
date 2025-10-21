@@ -4,6 +4,7 @@ import { Paper, Presentation, Misc } from "../types";
 
 const Publications: React.FC = () => {
   const { t, i18n } = useTranslation();
+  const baseUrl = import.meta.env.BASE_URL;
   const [activeTab, setActiveTab] = useState<
     "papers" | "presentations" | "misc"
   >("papers");
@@ -20,7 +21,7 @@ const Publications: React.FC = () => {
   useEffect(() => {
     const fetchYears = async () => {
       try {
-        const response = await fetch("/api/years.json");
+        const response = await fetch(`${baseUrl}api/years.json`);
         const data = await response.json();
         setYears(data.years || []);
 
@@ -33,7 +34,7 @@ const Publications: React.FC = () => {
     };
 
     fetchYears();
-  }, []);
+  }, [baseUrl]);
 
   // 論文、発表、またはその他データを取得
   useEffect(() => {
@@ -43,15 +44,15 @@ const Publications: React.FC = () => {
         const endpoint =
           activeTab === "papers"
             ? selectedYear
-              ? `./api/papers-${selectedYear}.json`
-              : "/api/papers.json"
+              ? `${baseUrl}api/papers-${selectedYear}.json`
+              : `${baseUrl}api/papers.json`
             : activeTab === "presentations"
             ? selectedYear
-              ? `./api/presentations-${selectedYear}.json`
-              : "/api/presentations.json"
+              ? `${baseUrl}api/presentations-${selectedYear}.json`
+              : `${baseUrl}api/presentations.json`
             : selectedYear
-            ? `./api/misc-${selectedYear}.json`
-            : "/api/misc.json";
+            ? `${baseUrl}api/misc-${selectedYear}.json`
+            : `${baseUrl}api/misc.json`;
 
         const response = await fetch(endpoint);
         const data = await response.json();
@@ -78,7 +79,7 @@ const Publications: React.FC = () => {
     };
 
     fetchData();
-  }, [activeTab, selectedYear]);
+  }, [activeTab, selectedYear, baseUrl]);
 
   // 表示するアイテムの制限
   const getDisplayedItems = <T extends Paper | Presentation | Misc>(
